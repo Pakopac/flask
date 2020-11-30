@@ -1,5 +1,5 @@
 {% for book in books %}
-    {% if book.id == id | int%}
+    {% if book.titre == title | replace("_"," ")%}
         {{book}}
     {% endif %}
 {% endfor %}

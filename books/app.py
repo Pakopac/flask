@@ -22,9 +22,13 @@ def index():
 def books():
     return render_template('books.html', book=book)
 
-@app.route('/api/book/<id>')
+@app.route('/api/book/id/<id>')
 def book_by_id(id):
-    return render_template('book_by_id.html', book=book, id=id)
+    return render_template('book_by_id.html', books=book, id=id)
+
+@app.route('/api/book/title/<title>')
+def book_by_title(title):
+    return render_template('book_by_title.html', books=book, title=title)
 
 if __name__ == '__main__':
     app.run(debug=True)
